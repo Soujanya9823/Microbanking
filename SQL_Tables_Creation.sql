@@ -1,13 +1,3 @@
-create table account(
-	Account_ID int(9) auto_increment,
-    AccountType_ID int(2),
-    User_ID int(9),
-    Account_Balance numeric(12,2),
-    PRIMARY KEY(Account_ID),
-    FOREIGN KEY (User_ID) REFERENCES user_details(User_ID) ON DELETE CASCADE,
-    FOREIGN KEY (AccountType_ID) REFERENCES account_type(AccountType_ID) ON DELETE CASCADE
-);
-
 
 create table Mobile_Banking_Unit(
 	MB_ID int(9) auto_increment,
@@ -40,6 +30,15 @@ create table account_type(
     Minimum_Balance numeric(6,2) NOT NULL,
     Account_Name varchar(20),
     PRIMARY KEY(AccountType_ID)
+);
+create table account(
+	Account_ID int(9) auto_increment,
+    AccountType_ID int(2),
+    User_ID int(9),
+    Account_Balance numeric(12,2),
+    PRIMARY KEY(Account_ID),
+    FOREIGN KEY (User_ID) REFERENCES user_details(User_ID) ON DELETE CASCADE,
+    FOREIGN KEY (AccountType_ID) REFERENCES account_type(AccountType_ID) ON DELETE CASCADE
 );
 
 /*for bank record*/
